@@ -1,7 +1,9 @@
 # Sistema de Gerenciamento de Biblioteca CLI
 
 Felipe Meireles - RA 2012841
+
 José Carlos Fujii - RA 1994006
+
 João Vitor Alvez de Paula - RA 1993855
 
 Este é um sistema de gerenciamento de biblioteca, feito em Python como uma aplicação de Interface de Linha de Comando (CLI). 
