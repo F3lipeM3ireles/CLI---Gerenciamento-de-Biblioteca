@@ -66,6 +66,8 @@ def menu():
         elif escolha == '6':
             exibir_operacoes()
         elif escolha == '7':
+            relatorio_livros_por_genero()
+        elif escolha == '8':
             print("Adeus, vai pela sombra!")
             break
         else:
@@ -229,6 +231,21 @@ def exibir_operacoes():
     print("\n== Pilha de operações (LIFO) ==")
     for operacao in reversed(pilha_operacoes):
         print(f"- {operacao}")
+
+def relatorio_livros_por_genero():
+    generos = {}
+    for titulo, (autor, ano, genero, disponivel) in livros.items():
+        if genero not in generos:
+            generos[genero] = []
+        generos[genero].append((titulo, disponivel))
+
+    print("\n--- Relatório de Livros por Gênero ---")
+    for genero, lista in generos.items():
+        disponiveis = sum(1 for _, d in lista if d)
+        print(f"\nGênero: {genero} ({disponiveis} disponíveis)")
+        for titulo, disponivel in lista:
+            status = "Disponível" if disponivel else "Emprestado"
+            print(f" - {titulo} [{status}]")
 
 
 if __name__ == '__main__':
